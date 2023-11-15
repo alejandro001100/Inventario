@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Alimento extends Producto{
     private String fechaElaboracion;
@@ -13,42 +14,24 @@ public class Alimento extends Producto{
         this.ingredientes = ingredientes;
     }
     @Override
-    public void ingresarProducto(){
-        super.ingresarProducto();
-        System.out.println("Ingrese la fecha de elaboración: ");
-        this.fechaElaboracion=sc.next();
-        System.out.println("Ingrese la fecha de vencimiento: ");
-        this.fechaVencimiento=sc.next();
-        System.out.println("Ingrese los ingredientes: ");
-        this.ingredientes=sc.next();
-    }
-    public Alimento(String fechaElaboracion, String fechaVencimiento, List<String> ingredientes) {
-        this.fechaElaboracion = fechaElaboracion;
-        this.fechaVencimiento = fechaVencimiento;
-        this.ingredientes = ingredientes;
-    }
-
-    public String getFechaElaboracion() {
-        return fechaElaboracion;
-    }
-
-    public void setFechaElaboracion(String fechaElaboracion) {
-        this.fechaElaboracion = fechaElaboracion;
-    }
-
-    public String getFechaVencimiento() {
-        return fechaVencimiento;
-    }
-
-    public void setFechaVencimiento(String fechaVencimiento) {
-        this.fechaVencimiento = fechaVencimiento;
-    }
-
-    public List<String> getIngredientes() {
-        return ingredientes;
-    }
-
-    public void setIngredientes(List<String> ingredientes) {
-        this.ingredientes = ingredientes;
+    public void ingresarProducto() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese el nombre del producto: ");
+        this.nombre = sc.next();
+        System.out.println("Ingrese el precio del producto: ");
+        this.precio = sc.nextDouble();
+        System.out.println("Ingrese el código del producto: ");
+        this.Codigo = sc.next();
+        System.out.println("Ingrese la cantidad del producto: ");
+        this.cantidad = sc.nextInt();
+        System.out.println("Ingrese la fecha de elaboración del producto: ");
+        this.fechaElaboracion = sc.next();
+        System.out.println("Ingrese la fecha de vencimiento del producto: ");
+        this.fechaVencimiento = sc.next();
+        System.out.println("Ingrese los ingredientes del producto: ");
+        String ingrediente = sc.next();
+        this.ingredientes.add(ingrediente);
+        System.out.println("Ingrese la marca del producto: ");
+        this.Marca = sc.next();
     }
 }
