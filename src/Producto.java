@@ -1,31 +1,38 @@
 import java.util.Scanner;
 
 public class Producto {
-    private String nombre;
-    private double precio;
-    private String Codigo;
-    private int cantidad;
-    private String Marca;
-    public Producto(String nombre, double precio, String Codigo, int cantidad){
-        this.nombre=nombre;
-        this.precio=precio;
-        this.Codigo=Codigo;
-        this.cantidad=cantidad;
+    public String nombre;
+    public double precio;
+    public String Codigo;
+    public int cantidad;
+    public String Marca;
+    public String marca;
+
+    public Producto(String nombre, double precio, String Codigo, int cantidad) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.Codigo = Codigo;
+        this.cantidad = cantidad;
     }
 
-    public Producto (){
+    public Producto() {
 
     }
-    public void ingresarProducto(){
-        Scanner sc= new Scanner(System.in);
+
+    public void ingresarProducto() {
+        Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese el nombre del producto: ");
-        this.nombre=sc.next();
+        this.nombre = sc.next();
         System.out.println("Ingrese el precio del producto: ");
-        this.precio=sc.nextDouble();
+        this.precio = sc.nextDouble();
         System.out.println("Ingrese el código del producto: ");
-        this.Codigo=sc.next();
+        this.Codigo = sc.next();
         System.out.println("Ingrese la cantidad del producto: ");
-        this.cantidad=sc.nextInt();
+        this.cantidad = sc.nextInt();
+    }
+
+    public void setMarca(String marca) {
+        Marca = marca;
     }
 
     public String getMarca() {
@@ -33,8 +40,8 @@ public class Producto {
         return Marca;
     }
 
-    public void setMarca(String marca) {
-        Marca = marca;
+    public String toString() {
+        return "El producto " + this.nombre + " es de marca: " + this.marca;
     }
 
     public String getNombre() {
@@ -69,4 +76,6 @@ public class Producto {
         this.cantidad = cantidad;
     }
 }
+
+
 

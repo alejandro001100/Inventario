@@ -13,25 +13,29 @@ public class Alimento extends Producto{
         this.fechaVencimiento = fechaVencimiento;
         this.ingredientes = ingredientes;
     }
+   public Alimento(){
+
+   }
     @Override
+
     public void ingresarProducto() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese el nombre del producto: ");
+        System.out.println("Ingrese el nombre del alimento: ");
         this.nombre = sc.next();
-        System.out.println("Ingrese el precio del producto: ");
+        System.out.println("Ingrese el precio del alimento: ");
         this.precio = sc.nextDouble();
-        System.out.println("Ingrese el código del producto: ");
+        System.out.println("Ingrese el código del alimento: ");
         this.Codigo = sc.next();
-        System.out.println("Ingrese la cantidad del producto: ");
+        System.out.println("Ingrese la cantidad del alimento: ");
         this.cantidad = sc.nextInt();
-        System.out.println("Ingrese la fecha de elaboración del producto: ");
+        System.out.println("Ingrese la fecha de elaboración del alimento: ");
         this.fechaElaboracion = sc.next();
-        System.out.println("Ingrese la fecha de vencimiento del producto: ");
+        System.out.println("Ingrese la fecha de vencimiento del alimento: ");
         this.fechaVencimiento = sc.next();
-        System.out.println("Ingrese los ingredientes del producto: ");
+        System.out.println("Ingrese los ingredientes del alimento: ");
         String ingrediente = sc.next();
         this.ingredientes.add(ingrediente);
-        System.out.println("Ingrese la marca del producto: ");
+        System.out.println("Ingrese la marca del alimento: ");
         this.Marca = sc.next();
     }
 }
