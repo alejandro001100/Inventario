@@ -3,15 +3,16 @@ import java.util.Scanner;
 public class Producto {
     public String nombre;
     public double precio;
-    public String Codigo;
+    public String codigo;
     public int cantidad;
-    public String Marca;
+
     public String marca;
 
-    public Producto(String nombre, double precio, String Codigo, int cantidad) {
+    public Producto(String nombre, double precio, String codigo, int cantidad, String marca) {
         this.nombre = nombre;
         this.precio = precio;
-        this.Codigo = Codigo;
+        this.codigo = codigo;
+        this.marca = marca;
         this.cantidad = cantidad;
     }
 
@@ -26,18 +27,20 @@ public class Producto {
         System.out.println("Ingrese el precio del producto: ");
         this.precio = sc.nextDouble();
         System.out.println("Ingrese el código del producto: ");
-        this.Codigo = sc.next();
+        this.codigo = sc.next();
         System.out.println("Ingrese la cantidad del producto: ");
         this.cantidad = sc.nextInt();
+        System.out.println("Ingrese la marca del producto: ");
+        this.marca = sc.next();
     }
 
     public void setMarca(String marca) {
-        Marca = marca;
+        this.marca = marca;
     }
 
     public String getMarca() {
 
-        return Marca;
+        return marca;
     }
 
     public String toString() {
@@ -61,11 +64,11 @@ public class Producto {
     }
 
     public String getCodigo() {
-        return Codigo;
+        return codigo;
     }
 
     public void setCodigo(String codigo) {
-        Codigo = codigo;
+        codigo = codigo;
     }
 
     public int getCantidad() {

@@ -9,8 +9,8 @@ public class Tecnologia extends Producto {
     private String tipo;
     private String modelo;
 
-    public Tecnologia(String nombre, double precio, String Codigo, int cantidad, int vidaUtilaños, String sitioFabricacion, double voltajeAlimentacion, String garantia, String color, String tipo, String modelo) {
-        super(nombre, precio, Codigo, cantidad);
+    public Tecnologia(String nombre, double precio, String codigo, int cantidad, String marca, int vidaUtilaños, String sitioFabricacion, double voltajeAlimentacion, String garantia, String color, String tipo, String modelo) {
+        super(nombre, precio, codigo, cantidad, marca);
         this.vidaUtilaños = vidaUtilaños;
         this.sitioFabricacion = sitioFabricacion;
         this.voltajeAlimentacion = voltajeAlimentacion;
@@ -20,7 +20,17 @@ public class Tecnologia extends Producto {
         this.modelo = modelo;
     }
 
-    public Tecnologia(){
+    public Tecnologia(int vidaUtilaños, String sitioFabricacion, double voltajeAlimentacion, String garantia, String color, String tipo, String modelo) {
+        this.vidaUtilaños = vidaUtilaños;
+        this.sitioFabricacion = sitioFabricacion;
+        this.voltajeAlimentacion = voltajeAlimentacion;
+        this.garantia = garantia;
+        this.color = color;
+        this.tipo = tipo;
+        this.modelo = modelo;
+    }
+
+    public Tecnologia() {
 
     }
 
@@ -84,8 +94,9 @@ public class Tecnologia extends Producto {
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
+
     public String toString(){
-        return "El producto "+this.nombre+" es de marca: "+this.marca;
+        return "El producto " + this.nombre + " es de marca: " + this.marca;
     }
 
     @Override
@@ -96,7 +107,7 @@ public class Tecnologia extends Producto {
         System.out.println("Ingrese el precio del producto: ");
         this.precio = sc.nextDouble();
         System.out.println("Ingrese el código del producto: ");
-        this.Codigo = sc.next();
+        this.codigo = sc.next();
         System.out.println("Ingrese la cantidad del producto: ");
         this.cantidad = sc.nextInt();
         System.out.println("Ingrese la vida útil del producto: ");
@@ -107,15 +118,11 @@ public class Tecnologia extends Producto {
         this.voltajeAlimentacion = sc.nextDouble();
         System.out.println("Ingrese la garantía del producto: ");
         this.garantia = sc.next();
-        System.out.println("Ingrese el color del producto: ");
-        this.color = sc.next();
         System.out.println("Ingrese el tipo del producto: ");
         this.tipo = sc.next();
         System.out.println("Ingrese el modelo del producto: ");
         this.modelo = sc.next();
         System.out.println("Ingrese la marca del producto: ");
-        this.Marca = sc.next();
+        this.marca = sc.next();
     }
-
 }
-

@@ -7,15 +7,23 @@ public class Alimento extends Producto{
     private String fechaVencimiento;
     private List<String> ingredientes = new ArrayList<>();
 
-    public Alimento(String nombre, double precio, String Codigo, int cantidad, String fechaElaboracion, String fechaVencimiento, List<String> ingredientes) {
-        super(nombre, precio, Codigo, cantidad);
+    public Alimento(String nombre, double precio, String codigo, int cantidad, String marca, String fechaElaboracion, String fechaVencimiento, List<String> ingredientes) {
+        super(nombre, precio, codigo, cantidad, marca);
         this.fechaElaboracion = fechaElaboracion;
         this.fechaVencimiento = fechaVencimiento;
         this.ingredientes = ingredientes;
     }
-   public Alimento(){
 
-   }
+    public Alimento(String fechaElaboracion, String fechaVencimiento, List<String> ingredientes) {
+        this.fechaElaboracion = fechaElaboracion;
+        this.fechaVencimiento = fechaVencimiento;
+        this.ingredientes = ingredientes;
+    }
+
+    public Alimento() {
+
+    }
+
     @Override
 
     public void ingresarProducto() {
@@ -25,7 +33,7 @@ public class Alimento extends Producto{
         System.out.println("Ingrese el precio del alimento: ");
         this.precio = sc.nextDouble();
         System.out.println("Ingrese el código del alimento: ");
-        this.Codigo = sc.next();
+        this.codigo = sc.next();
         System.out.println("Ingrese la cantidad del alimento: ");
         this.cantidad = sc.nextInt();
         System.out.println("Ingrese la fecha de elaboración del alimento: ");
@@ -36,6 +44,8 @@ public class Alimento extends Producto{
         String ingrediente = sc.next();
         this.ingredientes.add(ingrediente);
         System.out.println("Ingrese la marca del alimento: ");
-        this.Marca = sc.next();
+        this.marca = sc.next();
     }
 }
+
+

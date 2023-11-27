@@ -1,6 +1,8 @@
+import java.util.ArrayList;
 import java.util.Scanner;
+
 public class Inventario {
-    public void inventario() {
+    public void gestionarInventario() {
 
         Producto[] inventario = new Producto[10]; // Arreglo de 10 productos
         Scanner sc = new Scanner(System.in);
@@ -15,6 +17,10 @@ public class Inventario {
             opcion = sc.nextInt();
             switch (opcion) {
                 case 1:
+                    if (contador >= inventario.length) {
+                        System.out.println("Inventario lleno, no se pueden agregar más productos.");
+                        break;
+                    }
                     System.out.println("Ingrese el tipo de producto que desea ingresar: ");
                     System.out.println("1. Electrodoméstico");
                     System.out.println("2. Tecnología");
@@ -60,5 +66,6 @@ public class Inventario {
                     break;
             }
         }
+        sc.close();
     }
 }
